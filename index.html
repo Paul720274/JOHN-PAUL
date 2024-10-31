@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Sales & Services Company</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Header -->
+    <header class="bg-gray-800 text-white text-center py-4">
+        <h1 class="text-3xl font-bold">Penguin Sales & Services Company</h1>
+        <p class="text-lg">We Make It Happen</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-red-300 text-white py-3">
+        <div class="container mx-auto flex justify-center space-x-4">
+            <a href="#" class="hover:underline">Home</a>
+            <a href="#" class="hover:underline">Bridal Car Services</a>
+            <a href="#" class="hover:underline">Towing Services 24/7</a>
+            <a href="#" class="hover:underline">Trucking Services</a>
+            <a href="#" class="hover:underline">Heavy Equipment Rental</a>
+            <a href="#" class="hover:underline">General Construction</a>
+            <a href="#" class="hover:underline">Furniture</a>
+            <a href="#" class="hover:underline">Auto Parts</a>
+            <a href="#" class="hover:underline">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Search Box -->
+    <div class="container mx-auto my-6 text-center">
+        <input type="text" id="search" placeholder="Search services..." onkeyup="filterServices()"
+               class="w-full max-w-lg px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300">
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4">
+        <div id="servicesList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col service">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-2">Bridal Car Services</h2>
+                    <p>Elegant and stylish bridal car services to make your special day even more memorable.</p>
+                </div>
+                <img src="https://images.pexels.com/photos/2365572/pexels-photo-2365572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="...">
+            </div>
+            <div class="col service">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-2">Towing Services 24/7</h2>
+                    <p>Reliable towing services available around the clock for your convenience and safety.</p>
+                </div>
+                <img src="https://images.pexels.com/photos/164654/pexels-photo-164654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="...">
+            </div>
+            <div class="col service">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-2">Trucking Services</h2>
+                    <p>Efficient trucking solutions for all your transport needs.</p>
+                </div>
+                <img src="https://images.pexels.com/photos/794435/pexels-photo-794435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="...">
+            </div>
+            <div class="col service">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-2">Heavy Equipment Rental</h2>
+                    <p>Wide range of heavy equipment available for rent to suit various projects.</p>
+            
+                </div>
+                <img src="https://multico.com.ph/wp-content/uploads/2022/03/Multico-Your-Go-To-Choice-for-Heavy-Equipment-Rental-in-Surigao-Del-Norte-1024x909.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="col service">
+                <div class="bg-blue p-4 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-2">General Construction & Maintenance</h2>
+                    <p>Comprehensive construction and maintenance services for residential and commercial projects.</p>
+                </div>
+                <img src="https://www.datocms-assets.com/38028/1667507113-construction-maintenance.png" class="img-fluid" alt="...">
+            </div>
+            <div class="col service">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-2">Furniture - Hotel & Residential</h2>
+                    <p>Quality furniture for hotels and residential spaces, tailored to meet your aesthetic and functional needs.</p>
+                </div>
+                <img src="https://media.architecturaldigest.com/photos/61003294dfd326fb5e0145ba/16:9/w_2560%2Cc_limit/ritz%2520living%2520room%2520.png" class="img-fluid" alt="...">
+            </div>
+            <div class="col service">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-2">Auto Parts</h2>
+                    <p>Wide range of auto parts to keep your vehicle in top condition.</p>
+
+                </div>
+                <img src="https://static.wixstatic.com/media/036a2a_0afefd684d7b454baaa7c83897094f18~mv2.jpeg/v1/fill/w_560,h_316,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/AdobeStock_201848000.jpeg" class="img-fluid" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+        <p>© 2024 Penguin Sales & Services Company – All rights reserved</p>
+        <p>Powered by WP – Designed with the Customizr theme</p>
+    </footer>
+
+    <!-- JavaScript for Search Filter -->
+    <script>
+        function filterServices() {
+            const searchInput = document.getElementById("search").value.toLowerCase();
+            const services = document.getElementById("servicesList").getElementsByClassName("service");
+
+            for (let i = 0; i < services.length; i++) {
+                const serviceTitle = services[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+                if (serviceTitle.includes(searchInput)) {
+                    services[i].style.display = "";
+                } else {
+                    services[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
